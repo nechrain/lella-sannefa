@@ -1,0 +1,47 @@
+.containent {
+  background-image: url(ceramiquever2.jpg);
+
+  height: 300px;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: lightgrey;
+  padding: 25px;
+  margin: 50px;
+
+  opacity: 0.9;
+}
+.cardes {
+  margin: 40px;
+}
+.chercher {
+  background-color: rgb(223, 202, 19);
+  border: transparent;
+  border-radius: 7%;
+  width: 100px;
+  opacity: 1;
+}
+.ingredient {
+  color: rgb(209, 123, 114);
+}
+.footere {
+  height: 200px;
+}
+.thecards{
+  display: flex;
+flex-direction: row;
+justify-content: space-between;
+margin-left: 70px;
+margin-right: 70px;
+margin-bottom: 15px;
+}
+.butonet{
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

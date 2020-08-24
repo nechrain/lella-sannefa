@@ -1,0 +1,30 @@
+ul li {
+    list-style: none;
+    display: inline;
+    justify-content: space-around;
+    padding-left: 30px;
+  }
+  ul li a {
+    text-decoration: none;
+    color: ivory;
+    font-size: 25px;
+  }
+  .header {
+     
+   
+    margin-left: 100px;
+    margin-right: 100px;
+    height: 100px;
+   background-color: silver;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+   
+    width: 80%;
+    top: 0;
+   opacity: 0.9;
+    box-shadow: 10px 5px 5px rgb(167, 147, 105);
+    text-align: center;
+    border-radius: 0 0 50% 50%;
+    
+}
