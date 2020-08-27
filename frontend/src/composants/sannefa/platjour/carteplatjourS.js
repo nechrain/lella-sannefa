@@ -33,31 +33,54 @@ class CartePlatjourS extends React.Component {
             <MDBCardImage
               className="img-fluid"
               src={"http://localhost:1305/" + el.image}
+              // src="/static/media/logo.d7273074.png"
               waves
             />
             <MDBCardBody>
               <MDBCardTitle>{el.title}</MDBCardTitle>
               <hr></hr>
-              <MDBCardText><b>Les ingredient :</b>{el.ingredient} </MDBCardText>
-              <MDBCardText><b>Prix :</b>{el.price} </MDBCardText>
+              <MDBCardText>
+                <b>Les ingredient :</b>
+                {el.ingre}
+              </MDBCardText>
+              <MDBCardText>
+                <b>Prix :</b>
+                {el.price}
+              </MDBCardText>
 
-              <MDBCardText><b>Gouvernorat :</b>{el.gouvernorat} </MDBCardText>
-              <MDBCardText><b>Localisation:</b>{el.region} </MDBCardText>
-            
-             <hr></hr>
+              <MDBCardText>
+                <b>Gouvernorat :</b>
+                {el.gouvernorat}
+              </MDBCardText>
+              <MDBCardText>
+                <b>Localisation:</b>
+                {el.region}{" "}
+              </MDBCardText>
 
-              <div className="butonet"> 
-             <div> <MDBBtn onClick={() => this.props.supprimer(el._id)}  color="pink" icon="trash">  <MDBIcon icon="trash" />
-                supprimer
-              </MDBBtn></div>
-              
-              <div>
-                {" "}
-                <ChangerPlat platS={el} />
+              <hr></hr>
+
+              <div className="butonet">
+                <div>
+                  {" "}
+                  <MDBBtn
+                    onClick={() => this.props.supprimer(el._id)}
+                    color="green"
+                    icon="trash"
+                  >
+                    {" "}
+                    <MDBIcon icon="trash" />
+                    supprimer
+                  </MDBBtn>
+                </div>
+
+                <div>
+                  {" "}
+                  <ChangerPlat platS={el} />
+                </div>
               </div>
-
-              </div>
-
+              <MDBBtn color="red" icon="trash">
+                Publier
+              </MDBBtn>
             </MDBCardBody>
           </MDBCard>
         ))}

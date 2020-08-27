@@ -12,16 +12,18 @@ import Advertsment from "./publicité";
 
 
 
+
 const PlatjourS = () => {
   return (
     <div>
-      <div className="containent">
+      
+
     <NavbarS/>
  
-    </div>
-  
+ 
+  <Advertsment/>
     <AddPlatjour/>
-    <CartePlatjourS/>
+   <CartePlatjourS/>
     <Footersannefa/>
   
 

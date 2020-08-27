@@ -15,13 +15,14 @@ import {
   MDBCardText,
   MDBRow,
   MDBCol,
- 
+  MDBRating 
 } from "mdbreact";
 const CartePlat=()=>{
 return (
 <div className="cardes">
 <MDBRow>
   <MDBCol md="4">
+    
     <MDBCard cascade>
       <MDBCardImage
         cascade
@@ -40,14 +41,18 @@ return (
         </MDBCardText>
         <MDBCardText> <b>Prix:</b>  8 TND</MDBCardText>
       </MDBCardBody>
-
+     
       <div className="rounded-bottom mdb-color lighten-3 text-center pt-3">
+     
         <center>
           {" "}
           <div className="white-text"> Soliman Nabeul</div>
+          
         </center>
       </div>
     </MDBCard>
+    
+    
   </MDBCol>
 </MDBRow>
 </div> 

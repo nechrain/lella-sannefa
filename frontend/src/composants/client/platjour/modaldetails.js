@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { 
   MDBTable, MDBTableBody,
   MDBCardBody,
-  MDBCardTitle,
+  MDBCardTitle,MDBRating,
   MDBCardText,MDBCard, MDBCardImage, MDBIcon, MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact';
 
 class ModalPage extends Component {
@@ -35,52 +35,41 @@ render() {
           <MDBModalHeader toggle={this.toggle(14)}></MDBModalHeader>
           <MDBModalBody>
           <MDBCard cascade>
-              <MDBCardImage
-                cascade
-                className="img-fluid"
-                overlay="white-light"
-                hover
-                src="https://femmesdetunisie.com/wp-content/uploads/2015/12/Borghol.jpg"
-              />
+            
           <MDBCardBody cascade>
                 <MDBCardTitle>Coucous bl 3alouch</MDBCardTitle>
+                <center><MDBCardTitle> <MDBRating/></MDBCardTitle></center>
                 <hr />
                 <MDBTable responsive bordered>
     
       <MDBTableBody >
         <tr>
-          <td className="rounded-bottom mdb-color lighten-3 text-center pt-3 white-text"><b>Prénom</b></td>
-          <td>*********</td>
+          <td className="rounded-bottom mdb-color lighten-3 text-center pt-3 white-text"><b>prenom</b></td>
+          <td>Naima</td>
         </tr>
 
         <tr>
-          <td className="rounded-bottom mdb-color lighten-3 text-center pt-3 white-text"><b>Nom</b></td>
-          <td>******</td>
+          <td className="rounded-bottom mdb-color lighten-3 text-center pt-3 white-text"><b>nom </b></td>
+          <td>tamzini</td>
         </tr>
 
         <tr>
-          <td className="rounded-bottom mdb-color lighten-3 text-center pt-3 white-text"><b>Téléphone</b></td>
-          <td>+216****</td>
+          <td className="rounded-bottom mdb-color lighten-3 text-center pt-3 white-text"><b>telephone</b></td>
+          <td>+216 255 888</td>
         </tr>
         <tr>
           <td className="rounded-bottom mdb-color lighten-3 text-center pt-3 white-text"><b>Adresse email:</b></td>
-          <td>******@**.**</td>
+          <td>naimatamzini@yahoo.fr</td>
         </tr>
 
         <tr>
           <td className="rounded-bottom mdb-color lighten-3 text-center pt-3 white-text"><b>Adresse</b></td>
-          <td>********</td>
+          <td>8 avenue mohamed V</td>
         </tr>
 
-        <tr>
-          <td className="rounded-bottom mdb-color lighten-3 text-center pt-3 white-text"><b>Gouvernorat</b></td>
-          <td>********</td>
-        </tr>
+        
 
-        <tr>
-          <td className="rounded-bottom mdb-color lighten-3 text-center pt-3 white-text"><b>Région  Q²</b></td>
-          <td>********</td>
-        </tr>
+        
       </MDBTableBody>
     </MDBTable>
               </MDBCardBody>

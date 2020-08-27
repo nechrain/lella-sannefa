@@ -13,11 +13,14 @@ import { Fragment } from "react";
 import { connect } from "react-redux";
 import { addPlatJourSToApi } from "../../../actions/sannefaaction";
 import axios from "axios";
+import "./sannefa.css";
 
 class AddPlatjour extends Component {
+  imagename = React.createRef();
   state = {
     modal14: false,
-    selectedFile: [],
+    selectedFile: "",
+    image: "",
   };
 
   toggle = (nr) => () => {
@@ -26,30 +29,35 @@ class AddPlatjour extends Component {
       [modalNumber]: !this.state[modalNumber],
     });
   };
+  /*************function upload img*********** */
   fileSelectedHandler = (e) => {
     this.setState({ selectedFile: e.target.files[0] });
   };
 
   uploadHandler = () => {
     const fd = new FormData();
-    fd.append("files", this.state.selectedFile);
+    fd.append("file", this.state.selectedFile);
     axios
       .post("http://localhost:1305/image", fd)
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   };
+
   render() {
     return (
       <MDBContainer>
-        <MDBBtn
+        <button
           floating="TRUE"
           tag="a"
-          gradient="peach"
+          className="ajouterr"
           action
           onClick={this.toggle(14)}
         >
-          <MDBIcon icon="plus" className="mdb-color lighten-3" />
-       <h6> ajouter votre plat</h6></MDBBtn>
+          Ajouter votre plat
+          <div>
+            <MDBIcon icon="plus" />
+          </div>
+        </button>
 
         <MDBModal isOpen={this.state.modal14} toggle={this.toggle(14)} centered>
           <MDBModalHeader toggle={this.toggle(14)}></MDBModalHeader>
@@ -61,9 +69,11 @@ class AddPlatjour extends Component {
                 <MDBInput
                   type="file"
                   onChange={(e) => this.fileSelectedHandler(e)}
+                  // this.setState({ image: this.state.selectedFile.name })
+
                   outline
-                />{" "}
-                <button onClick={this.uploadHandler}>upload</button>
+                />
+                <button onClick={() => this.uploadHandler()}>upload</button>
               </div>
 
               <div className="form-group">
@@ -123,16 +133,16 @@ class AddPlatjour extends Component {
           <MDBModalFooter>
             <center>
               {" "}
-              <MDBBtn color="purple" onClick={this.toggle(14)}>
+              <MDBBtn class="btn btn-warning" onClick={this.toggle(14)}>
                 Close
               </MDBBtn>
               <MDBBtn
-                color="pink"
-             
+                color="green"
                 onClick={() =>
                   this.props.platjouradded({
                     title: this.state.title,
-                    image: this.state.image,
+                    // image: this.state.image,
+                    image: this.state.selectedFile.name,
                     prix: this.state.prix,
                     ingredient: this.state.ingredient,
                     gouvernorat: this.state.gouvernorat,

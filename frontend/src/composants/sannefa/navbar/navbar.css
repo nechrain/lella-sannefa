@@ -12,19 +12,26 @@ ul li {
   .header {
      
    
-    margin-left: 100px;
-    margin-right: 100px;
+   
     height: 100px;
-   background-color: silver;
+   background-color:rgb(84, 194, 84);
     display: flex;
     align-items: center;
     justify-content: space-around;
+  
    
-    width: 80%;
-    top: 0;
-   opacity: 0.9;
+   
+   
+  
     box-shadow: 10px 5px 5px rgb(167, 147, 105);
-    text-align: center;
-    border-radius: 0 0 50% 50%;
+   
+  
     
 }
+.logo{
+  border-radius: 50%;
+  height: 80px;
+  border: 3px black ;
+  background-color: rgb(240, 248, 250);
+}
+

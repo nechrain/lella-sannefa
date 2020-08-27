@@ -1,0 +1,30 @@
+#classicformpage .view {
+    background-image: url("./femme.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+  }
+  
+  
+   #classicformpage .card {
+    background-color: rgba(177, 179, 75, 0.2);
+  }
+   */
+  #classicformpage h6 {
+    line-height: 1.7;
+  }
+  .logooo{
+      height: 200px;
+      border-radius: 50%;
+      background-color: beige;
+  }
+  .losss{
+      font-family:Chalkduster, fantasy;
+      font-size: 50px;
+  }
+  .inscrip{
+      font-family: fantasy;
+ color: rgb(238, 233, 225);   
+font-size: 60px;
+text-decoration-line: underline;}

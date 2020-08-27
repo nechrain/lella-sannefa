@@ -1,8 +1,4 @@
-.containent {
-  background-image: url(ceramiquever2.jpg);
 
-  height: 300px;
-}
 
 .options {
   display: flex;
@@ -34,14 +30,36 @@
 .thecards{
   display: flex;
 flex-direction: row;
+flex-wrap: wrap;
 justify-content: space-between;
 margin-left: 70px;
 margin-right: 70px;
 margin-bottom: 15px;
+justify-content: space-between;
 }
 .butonet{
   
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.ADDE{
+  background-color: yellow;
+  margin: 20px;
+}
+.asgher{
+width: 50%;
+ 
+}
+.ajouterr{
+  background-color:orange;
+  color: white;
+  border: wheat;
+  margin-bottom:100px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  border-radius: 25%;
+  width: 500px;
+  height: 100px;
+  font-size:30px;
+  box-shadow: 5px 10px 3px rgb(148, 161, 132);
 }

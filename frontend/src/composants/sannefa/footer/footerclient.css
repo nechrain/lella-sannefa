@@ -1,5 +1,6 @@
 .footer {
-  background: url(ceramicfooter.jpg);
+  background-color:rgb(84, 194, 84); 
+  box-shadow: 10px 5px 5px 10px rgb(167, 147, 105);
 }
 div.wave {
   width: 100%;
@@ -7,10 +8,14 @@ div.wave {
   bottom: 0;
   left: 0;
   background-image: url(wave.png);
-  animation: animate 10s linear infinite;
+  animation: animate 5s linear infinite;
   opacity: 0.7;
+  z-index: 2;
+ 
 }
 
+
+ 
 @keyframes animate {
   0% {
     background-position: 0;
@@ -19,10 +24,12 @@ div.wave {
     background-position: 1360px;
   }
 }
-.LOGOFOOTER{
-  font: fantasy;
-  color: rgb(38, 0, 255);
-  font-size: 80PX;
-
+.logoo{
+  border-radius: 50%;
+  height: 250px;
+  background-color: white;
+  
+  bottom: 0;
+  z-index: 1;
 
 }
