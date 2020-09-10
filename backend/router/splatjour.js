@@ -6,4 +6,5 @@ router.get("/gettallplats", splatjourControler.getPlatjourS);
 router.post("/ajouter", splatjourControler.addPlatjourS);
 router.delete("/supprimer/:id", splatjourControler.deletePlatjourS);
 router.patch("/changer/:id", splatjourControler.editPlatjourS);
+router.patch("/publier/:id", splatjourControler.publishPlatjourS);
 module.exports = router;

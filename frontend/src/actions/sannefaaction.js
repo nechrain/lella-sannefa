@@ -3,6 +3,7 @@ import {
   ADD_Platjour,
   DELETE_Platjour,
   EDIT_Platjour,
+  PUBLISH_Platjour,
 } from "./type";
 import axios from "axios";
 
@@ -29,10 +30,11 @@ export const addPlatJourS = (payload) => {
     payload,
   };
 };
-export const addPlatJourSToApi = (el) => {  return (dispatch) =>
-  axios
-    .post("http://localhost:1305/platjour/ajouter",  el )
-    .then((res) => window.location.reload(false));
+export const addPlatJourSToApi = (el) => {
+  return (dispatch) =>
+    axios
+      .post("http://localhost:1305/platjour/ajouter", el)
+      .then((res) => window.location.reload(false));
 };
 
 //supprimer plat du jour//
@@ -69,5 +71,25 @@ export const changeeDataPlatjour = (el) => {
       .then((res) =>
         dispatch(changerPlat(res.data), window.location.reload(false))
       );
+  };
+};
+
+export const publierPlat = (payload) => {
+  return {
+    type: PUBLISH_Platjour,
+    payload,
+  };
+};
+export const publierDataPlatjour = (el) => {
+  return (dispatch) => {
+    console.log(el);
+
+    axios
+      .patch(
+        `http://localhost:1305/platjour/publier/${el._id}`,
+        {},
+        { withCredentials: true }
+      )
+      .then((res) => dispatch(publierPlat(res.data)));
   };
 };

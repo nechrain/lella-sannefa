@@ -7,12 +7,10 @@ import logo from "./logo.png";
 
 const FooterC = () => {
   return (
-    <div>
+    <div className="wave">
       <section className="footer">
-      <img src={logo} className="logoo" ></img>  
-        <div className="wave">
-          
-        </div>
+     <center> <img src={logo} className="logoo" ></img> </center> 
+        
       </section>
     </div>
   );

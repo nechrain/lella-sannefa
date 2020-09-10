@@ -15,8 +15,12 @@ import { changeeDataPlatjour } from "../../../actions/sannefaaction";
 import axios from "axios";
 
 class ChangerPlat extends Component {
+  imagename = React.createRef();
+  
   state = {
     modal14: false,
+    selectedFile: "",
+    image: "",
     id: this.props.platS._id,
   };
 
@@ -26,13 +30,14 @@ class ChangerPlat extends Component {
       [modalNumber]: !this.state[modalNumber],
     });
   };
+  /*************function upload img*********** */
   fileSelectedHandler = (e) => {
     this.setState({ selectedFile: e.target.files[0] });
   };
 
   uploadHandler = () => {
     const fd = new FormData();
-    fd.append("files", this.state.selectedFile);
+    fd.append("file", this.state.selectedFile);
     axios
       .post("http://localhost:1305/image", fd)
       .then((res) => console.log(res))
@@ -60,8 +65,8 @@ class ChangerPlat extends Component {
               <div className="form-group">
                 <label htmlFor="example1">image</label>
                 <MDBInput
-                  type="file"
-                  onChange={(e) => this.fileSelectedHandler(e)}
+                 type="file"
+                 onChange={(e) => this.fileSelectedHandler(e)}
                   outline
                 />{" "}
                 <button onClick={this.uploadHandler}>upload</button>

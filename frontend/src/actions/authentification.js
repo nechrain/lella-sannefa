@@ -1,14 +1,13 @@
 import axios from "axios";
-import { REGISTER_SUCCESS, USER_LOADED, LOGIN_SUCCESS } from "./types";
-
-
-
+import { REGISTER_SUCCESS, USER_LOADED, LOGIN_SUCCESS } from "./type";
 
 export function register(el) {
   console.log(el);
   return (dispatch) =>
     axios
-      .post("http://localhost:1305/chef-d'oeuvre/authentif/register", el)
+      .post("http://localhost:1305/inscription/register", el, {
+        withCredentials: true,
+      })
       .then((res) =>
         dispatch(
           { type: REGISTER_SUCCESS, payload: res.data }
@@ -18,41 +17,43 @@ export function register(el) {
       .catch((err) => alert("Créez un compte"));
 }
 
-
-
-
-
-
 export function login(el) {
+  console.log(el);
   return (dispatch) =>
     axios
-      .post("http://localhost:1305/chef-d'oeuvre/authentif/login", el, {
+      .post("http://localhost:1305/inscription/login", el, {
         withCredentials: true,
       })
       .then(
-        (res) =>
-          dispatch(
-            {
-              type: LOGIN_SUCCESS,
-              payload: res.data,
-            },
-            localStorage.setItem("Role", res.data.role),
-            window.location.reload()
-          ),
+        (res) => {
+          console.log(res.data);
+          dispatch({
+            type: LOGIN_SUCCESS,
+            payload: res.data,
+          });
+          localStorage.setItem("Role", res.data.role);
 
-        dispatch(getUser())
+          if (res.data.role === "client") {
+            window.location.assign("/client");
+          } else if (res.data.role === "sannefa") {
+            window.location.assign("/platjour");
+          } else if (res.data.role === "undefined") {
+            window.location.assign("/");
+          }
+        }
+
+        // dispatch(getUser())
       )
       .catch((err) => alert("Créez un compte"));
-
-
-
-
 }
 export const getUser = () => async (dispatch) => {
   try {
     const res = await axios.get(
-      "http://localhost:1305/chef-d'oeuvre/authentif/profil",
-      { withCredentials: true }
+      "http://localhost:1305/inscription/profil",
+
+      {
+        withCredentials: true,
+      }
     );
     dispatch({
       type: USER_LOADED,
@@ -63,15 +64,11 @@ export const getUser = () => async (dispatch) => {
   }
 };
 
-
-
-
-
 export function logout() {
   return () =>
     axios
       .post(
-        "http://localhost:1305/chef-d'oeuvre/authentif/logout",
+        "http://localhost:1305/inscription/logout",
         {},
         { withCredentials: true }
       )

@@ -1,7 +1,6 @@
 const Splatjour = require("../model/splatjour");
 
 module.exports = {
-  
   /* get plates*/
   getPlatjourS: (req, res) => {
     Splatjour.find(function (err, data) {
@@ -10,9 +9,9 @@ module.exports = {
     });
   },
 
-   /* adding  plates*/
+  /* adding  plates*/
   addPlatjourS: async (req, res) => {
-    console.log(req.body);
+    console.log({ ...req.body, state: "non publiee" });
     const nouveauplat = await new Splatjour(req.body);
     nouveauplat
       .save()
@@ -21,9 +20,8 @@ module.exports = {
       )
       .catch((err) => res.status(500).send("error server"));
   },
-  
 
-   /* deleting plates*/
+  /* deleting plates*/
   deletePlatjourS: (req, res) => {
     console.log(`${req.params.id}deleted`);
     Splatjour.findByIdAndDelete(req.params.id)
@@ -31,8 +29,7 @@ module.exports = {
       .catch((err) => console.log(err));
   },
 
-
-   /* modifying plates*/
+  /* modifying plates*/
   editPlatjourS: (req, res) => {
     console.log(req.body, req.params.id);
     Splatjour.findByIdAndUpdate(req.params.id, req.body)
@@ -40,6 +37,16 @@ module.exports = {
       .then(() => {
         () => res.json(req.body);
         console.log(req.body);
+      })
+      .catch((err) => console.log(err))
+      .then(() => res.json("vous pouvez changer votre plat du jour"));
+  },
+  publishPlatjourS: (req, res) => {
+    Splatjour.findByIdAndUpdate(req.params.id, { state: "publiee" })
+
+      .then((data) => {
+        res.json(data);
+        console.log(data);
       })
       .catch((err) => console.log(err))
       .then(() => res.json("vous pouvez changer votre plat du jour"));

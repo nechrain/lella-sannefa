@@ -6,8 +6,9 @@ import "./sannefa.css";
 import NavbarS from "../navbar/navbar";
 import AddPlatjour from "./ajoutplatjourS";
 import CartePlatjourS from "./carteplatjourS";
-import Footersannefa from "../footer/footer";
+import "../../visiteur/footer/footerV"
 import Advertsment from "./publicité";
+import FooterVisiteur from "../../visiteur/footer/footerV";
 
 
 
@@ -24,7 +25,7 @@ const PlatjourS = () => {
   <Advertsment/>
     <AddPlatjour/>
    <CartePlatjourS/>
-    <Footersannefa/>
+    <FooterVisiteur/>
   
 
      

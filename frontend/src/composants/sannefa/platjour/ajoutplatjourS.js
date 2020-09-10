@@ -91,9 +91,7 @@ class AddPlatjour extends Component {
                   type="text"
                   id="example1"
                   className="form-control form-control-md"
-                  onChange={(e) =>
-                    this.setState({ ingredient: e.target.value })
-                  }
+                 onChange={(e) => this.setState({ price: e.target.value })}
                 />
               </div>
 
@@ -103,7 +101,7 @@ class AddPlatjour extends Component {
                   type="text"
                   id="example1"
                   className="form-control form-control-sm"
-                  onChange={(e) => this.setState({ prix: e.target.value })}
+                  onChange={(e) => this.setState({ price: e.target.value })}
                 />
               </div>
 

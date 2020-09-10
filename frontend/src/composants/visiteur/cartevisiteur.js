@@ -4,9 +4,8 @@ import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import "./home.css";
 
-
 import {
-    MDBBtn,
+  MDBBtn,
   MDBCard,
   MDBCardBody,
   MDBCardImage,
@@ -14,27 +13,42 @@ import {
   MDBCardText,
   MDBRow,
   MDBCol,
-  MDBIcon
+  MDBIcon,
 } from "mdbreact";
 
+const CarteVisiteur = (props) => {
+  return (
+    <div>
+      <MDBRow>
+        <MDBCol md="4">
+          <MDBCard cascade>
+            <MDBCardImage
+              cascade
+              className="img-fluid"
+              overlay="white-light"
+              hover
+              src={"http://localhost:1305/" + props.el.image}
+            />
 
-
-
-const CarteVisiteur=()=>{
-return (
-<div >
-<MDBRow>
-  <MDBCol md="4">
-    
-    <MDBCard cascade>
-      <MDBCardImage
-        cascade
-        className="img-fluid"
-        overlay="white-light"
-        hover
-        src="https://femmesdetunisie.com/wp-content/uploads/2015/12/Borghol.jpg"
-      />
-    <MDBBtn
+            <MDBCardBody cascade>
+              <MDBCardTitle className="almond-text ml-1 font-weight-bold">
+                {props.el.title}
+              </MDBCardTitle>
+              <hr />
+              <MDBCardText>
+                <MDBCardText>
+                  {" "}
+                  <b>Ingredient: </b>
+                  {props.el.ingredient}
+                </MDBCardText>
+                3alouch, felfel a7mer, kosksi smid, hrissa,zit zitouna
+              </MDBCardText>
+              <MDBCardText>
+                {" "}
+                <b>Prix:</b> {props.el.price}
+              </MDBCardText>
+            </MDBCardBody>
+            {/* <MDBBtn
                 floating
                 tag="a"
                 className="ml-auto mr-4 lighten-3 mdb-coalor"
@@ -43,32 +57,18 @@ return (
               >
                 <MDBIcon icon="chevron-right" className="mdb-color lighten-3" />
                 
-              </MDBBtn>
-      <MDBCardBody cascade>
-        <MDBCardTitle>Coucous bl 3alouch</MDBCardTitle>
-        <hr />
-        <MDBCardText>
-          <MDBCardText> <b>Ingredient </b></MDBCardText>
-          3alouch, felfel a7mer, kosksi smid, hrissa,zit zitouna
-        </MDBCardText>
-        <MDBCardText> <b>Prix:</b>  8 TND</MDBCardText>
-      </MDBCardBody>
-     
-      <div className="rounded-bottom mdb-color lighten-3 text-center pt-3">
-     
-        <center>
-          {" "}
-          <div className="white-text"> Soliman Nabeul</div>
-          
-        </center>
-      </div>
-    </MDBCard>
-    
-    
-  </MDBCol>
-</MDBRow>
-</div> 
-)
-}
+              </MDBBtn> */}
+            <div className="rounded-bottom mdb-color green text-center pt-3">
+              <center>
+                {" "}
+                <div className="white-text"> Soliman Nabeul</div>
+              </center>
+            </div>
+          </MDBCard>
+        </MDBCol>
+      </MDBRow>
+    </div>
+  );
+};
 
 export default CarteVisiteur;

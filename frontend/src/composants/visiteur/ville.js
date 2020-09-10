@@ -1,28 +1,6 @@
-import React, { Component } from "react";
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import 'bootstrap-css-only/css/bootstrap.min.css';
-import 'mdbreact/dist/css/mdb.css';
-import "./home.css" 
-import { MDBBtn } from "mdbreact";
-
-
-
-
-
-const Chercher = () => {
-  return (
-   
-    
-    
-    <div className="optionss">
-               
-             
-              
-         
-          {/* partie 1 */}
-          <div>
+<div>
 <select className="browser-default custom-select title3">
-  
+  <option >gouvernorat</option>
   <option value="1">Ariana</option>
   <option value="2">Béja</option>
   <option value="3">Ben Arous</option>
@@ -49,27 +27,9 @@ const Chercher = () => {
   <option value="24">Zaghouan</option>
 </select>
 </div>
+municipalite
+let nabeul=["Azmour","Béni Khalled","Béni Khiar","Bou Argoub","Dar Allouch","Dar Chaâbane · El Haouaria · El Maâmoura · El Mida · Grombalia · Hammam Ghezèze · Hammamet · Kélibia · Korbous · Korba · Menzel Bouzelfa · Menzel Horr · Menzel Temime · Nabeul · Soliman · Somâa · Takelsa · Tazarka · Zaouiet Djedidi"]
 
-  {/* partie 2 */}
-    
-<div className="form-group">
-                <label htmlFor="example1"></label>
-                <input
-                  type="text"
-                  id="example1"
-                  className="form-control form-control-md title2"
-                 
-                />
-              </div>
-     {/* partie 3 */}
-              <div> 
-              <MDBBtn color="success"><span className="title2">Chercher</span></MDBBtn>
-              </div>
-          
-    </div>
- 
-     
-  )
-}
 
-export default Chercher;
+
+

@@ -11,9 +11,7 @@
 
   opacity: 0.9;
 }
-.cardes {
-  margin: 40px;
-}
+
 .chercher {
   background-color: rgb(223, 202, 19);
   border: transparent;
@@ -24,19 +22,13 @@
 .ingredient {
   color: rgb(209, 123, 114);
 }
-.footere {
-  height: 200px;
+
+.spaceCarte{
+margin-left:5%;
+margin-right: 5%;
+margin-bottom: 20%;
 }
-.thecards{
-  display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-justify-content: space-between;
-margin-left: 70px;
-margin-right: 70px;
-margin-bottom: 15px;
-justify-content: space-between;
-}
+
 .butonet{
   
   display: flex;

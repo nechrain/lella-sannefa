@@ -7,6 +7,7 @@ MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBIcon } from "mdbreact";
 import { BrowserRouter as Router } from 'react-router-dom';
 import "./navbar.css";
 import logo from "./logo.png"
+import {Link} from "react-router-dom";
 
 class NavbarS extends Component {
 state = {
@@ -64,7 +65,7 @@ render() {
                   <MDBIcon icon="user" />
                 </MDBDropdownToggle>
                 <MDBDropdownMenu className="dropdown-right">
-                  <MDBDropdownItem href="#!">sign out</MDBDropdownItem>
+                  <MDBDropdownItem > <Link to="/signoutS"> Sign Out</Link></MDBDropdownItem>
                   
                 </MDBDropdownMenu>
               </MDBDropdown>
