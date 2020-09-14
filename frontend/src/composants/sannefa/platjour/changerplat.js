@@ -138,7 +138,7 @@ class ChangerPlat extends Component {
                 Close
               </MDBBtn>
               <MDBBtn
-                color="warning"
+                color="amber"
               
                 onClick={() => this.props.platChangé(this.state)}
               >

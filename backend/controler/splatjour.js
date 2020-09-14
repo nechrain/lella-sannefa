@@ -41,6 +41,8 @@ module.exports = {
       .catch((err) => console.log(err))
       .then(() => res.json("vous pouvez changer votre plat du jour"));
   },
+
+  /*******-*******************publier le plat************************* */
   publishPlatjourS: (req, res) => {
     Splatjour.findByIdAndUpdate(req.params.id, { state: "publiee" })
 
@@ -48,7 +50,19 @@ module.exports = {
         res.json(data);
         console.log(data);
       })
-      .catch((err) => console.log(err))
-      .then(() => res.json("vous pouvez changer votre plat du jour"));
+      .catch((err) => console.log(err));
+  },
+
+  /********************************obtener contact sannefa pour plat******** */
+  getidplat: (req, res) => {
+    Splatjour.findOne({ _id: req.params.id })
+      .populate("iduser")
+      .exec((erreur, user) => {
+        if (erreur) console.log("erreur", erreur);
+        else {
+          console.log(user.iduser);
+          res.json(user.iduser);
+        }
+      });
   },
 };

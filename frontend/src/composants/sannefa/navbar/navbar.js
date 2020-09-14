@@ -8,6 +8,8 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import "./navbar.css";
 import logo from "./logo.png"
 import {Link} from "react-router-dom";
+import { connect } from "react-redux";
+import { logout } from "./../../../actions/authentification"
 
 class NavbarS extends Component {
 state = {
@@ -17,6 +19,9 @@ state = {
 toggleCollapse = () => {
   this.setState({ isOpen: !this.state.isOpen });
 }
+// componentDidMount() {
+//   this.props.logout();
+// }
 
 render() {
   return (
@@ -29,13 +34,13 @@ render() {
         <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
           <MDBNavbarNav left>
             <MDBNavItem active>
-              <MDBNavLink to="#!"><b>Home</b></MDBNavLink>
+              <MDBNavLink to="/"><b>Home</b></MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
-              <MDBNavLink to="#!"><b>Service</b></MDBNavLink>
+              <MDBNavLink to="/about"><b>À propos</b></MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
-              <MDBNavLink to="#!"><b>Mon compte</b></MDBNavLink>
+              <MDBNavLink to="/contact"><b>Contact</b></MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
             
@@ -60,15 +65,9 @@ render() {
               
             </MDBNavItem>
             <MDBNavItem>
-              <MDBDropdown>
-                <MDBDropdownToggle nav caret>
-                  <MDBIcon icon="user" />
-                </MDBDropdownToggle>
-                <MDBDropdownMenu className="dropdown-right">
-                  <MDBDropdownItem > <Link to="/signoutS"> Sign Out</Link></MDBDropdownItem>
-                  
-                </MDBDropdownMenu>
-              </MDBDropdown>
+      
+                  <button tag={Link} to="/signoutC" onClick={()=>this.props.logout()}> <MDBIcon icon="user" />  Sortir </button>
+         
             </MDBNavItem>
           </MDBNavbarNav>
         </MDBCollapse>
@@ -78,4 +77,7 @@ render() {
   }
 }
 
-export default NavbarS;
+const mapDispatchTo=(dispatch)=>({
+  logout:()=>dispatch(logout())
+})
+export default connect(null,mapDispatchTo )(NavbarS);

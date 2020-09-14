@@ -1,48 +1,78 @@
-.optionss{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    background-color: rgb(142, 180, 148);
-    padding: 25px;
-    margin: 50px;
-    opacity: 0.7;  
+.optionss {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: rgb(118, 221, 133);
+  padding: 25px;
+  margin: 50px;
+ 
 }
-
-.imjafront{
-
-   background-image: url('./imajapexel.jpeg');
-   height: 100vh;
-   background-repeat: no-repeat;
+.navspace{
+  margin-bottom: 5%;
+}
+.footerspace{
+  margin-top: 5%;
+}
+.groupse {
+  /* width: 140vw !important; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.bottom{
+  margin-bottom: 30%;
+}
+.platCard {
+  width: 500px;
+  /* height: 800px; */
+  margin-bottom: 20%;
+}
+.cardImagePlat {
+  width: 18rem;
+  height: 18rem;
+  margin: 10px;
+}
+.imjafront {
+  background-image: url("./imajapexel.jpeg");
+  height: 100vh;
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
 }
-
+.colorbottomcard{
+  background-color: #ef6c00;
+}
 /*sign up*/
-.titlee{
+.titlee {
   font-family: "Playball", cursive;
   font-size: 50px;
-  color:rgb(223, 172, 109);
+  color: rgb(223, 172, 109);
+
+  
 }
 
-.title2{
-  font-family: 'Tangerine', serif;
-  font-size:20px;
+.title2 {
+  font-family: "Tangerine", serif;
+  font-size: 20px;
 }
-.title3{
-  font-family: 'Tangerine', serif;
-  font-size:30px;
+.title13 {
+  font-family: "Tangerine", serif;
+  font-size: 60px;
 }
-.titlesign{
-  font-family: 'Tangerine', serif;
-  font-size:30px;
+.title3 {
+  font-family: "Tangerine", serif;
+  font-size: 30px;
+}
+.titlesign {
+  font-family: "Tangerine", serif;
+  font-size: 30px;
   color: bisque;
   font-weight: 600;
 }
-.haut{
-  margin-top:80px !important
-
-
+.haut {
+  margin-top: 80px !important;
 
   /*section 3*/
 }
@@ -115,4 +145,11 @@
   #apppage .view {
     min-height: 150vh;
   }
+}
+/*detail modal*/
+.profilimage{
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  margin-top: 5%;
 }

@@ -34,19 +34,20 @@ class CartePlatjourS extends React.Component {
         <MDBRow>
           {this.props.platdujourS.map((el, _id) => (
             <MDBCol md="4">
-              <MDBCard narrow>
-                <MDBView cascade>
+              <MDBCard narrow className="ahbet">
+                <MDBView>
                   <MDBCardImage
                     hover
                     overlay="pink-slight"
-                    className="card-img-top"
-                    src={"http://localhost:1305/" + el.props.image}
-                    // src="/static/media/logo.d7273074.png"
+                    className="img-fluid w-100 p-3 "
+                    style={{ height: "20rem" }}
+                    src={`http://localhost:1305/${el.image}`}
+                    
                     waves
                   />
                 </MDBView>
                 <MDBCardBody>
-                  <MDBCardTitle className="pink-text">{el.title} </MDBCardTitle>
+                <center>  <MDBCardTitle className="pink-text">{el.title} </MDBCardTitle></center>
                   <hr></hr>
                   <MDBCardText>
                     <b>Les ingredient :</b>
@@ -54,7 +55,7 @@ class CartePlatjourS extends React.Component {
                   </MDBCardText>
                   <MDBCardText>
                     <b>Prix :</b>
-                    {el.price}{" "}
+                    {el.prix}{" "}
                   </MDBCardText>
 
                   <MDBCardText>
@@ -62,41 +63,43 @@ class CartePlatjourS extends React.Component {
                     {el.gouvernorat}{" "}
                   </MDBCardText>
                   <MDBCardText>
-                    <b>Localisation:</b>
-                    {el.region}
+                    <b>Localisation: </b>{el.region}
                   </MDBCardText>
 
                   <hr></hr>
 
                   <div className="butonet">
-                    <div>
+
+  <div >
+                      <MDBBtn
+                        color="green"
+                          
+                        onClick={() => this.props.publier(el)}
+                      >
+                         <MDBIcon icon="eye" />
+                        Publier
+                      </MDBBtn>
+                    </div>
+                    
+
+                    <ChangerPlat platS={el._id} />
+
+
+                  <div>
                       {" "}
                       <MDBBtn
                         onClick={() => this.props.supprimer(el._id)}
-                        color="green"
+                        color="red"
                         icon="trash"
                       >
                         {" "}
                         <MDBIcon icon="trash" />
                         supprimer
                       </MDBBtn>
-                    </div>
+                    </div>{" "}
 
-                    <div>
-                      {" "}
-                      <ChangerPlat platS={el._id} />
-                    </div>
-                  </div>
 
-                  <div className="rounded-bottom mdb-color lighten-3 text-center pt-3">
-                    <MDBBtn
-                      color="transparent"
-                      icon="trash"
-                      className="place"
-                      onClick={() => this.props.publier(el)}
-                    >
-                      Publier
-                    </MDBBtn>
+
                   </div>
                 </MDBCardBody>
               </MDBCard>

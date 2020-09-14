@@ -3,7 +3,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import "./home.css";
-
+import DétailClient from "../client/platjour/modaldetails";
 import {
   MDBBtn,
   MDBCard,
@@ -21,19 +21,29 @@ const CarteVisiteur = (props) => {
     <div>
       <MDBRow>
         <MDBCol md="4">
-          <MDBCard cascade>
-            <MDBCardImage
-              cascade
-              className="img-fluid"
-              overlay="white-light"
-              hover
-              src={"http://localhost:1305/" + props.el.image}
-            />
+          <MDBCard style={{ width: "22rem" }} className="bottom">
+            <center>
+              {" "}
+              <MDBCardImage
+                cascade
+                className="img-fluid w-100 p-3"
+                overlay="white-light"
+                hover
+                style={{ height: "18rem" }}
+                src={"http://localhost:1305/" + props.el.image}
+              />
+            </center>
 
-            <MDBCardBody cascade>
-              <MDBCardTitle className="almond-text ml-1 font-weight-bold">
-                {props.el.title}
-              </MDBCardTitle>
+            <MDBCardBody>
+              <center>
+                <div>
+                  {" "}
+                
+                </div>
+                <MDBCardTitle className="almond-text ml-1 font-weight-bold">
+                  {props.el.title}
+                </MDBCardTitle>
+              </center>
               <hr />
               <MDBCardText>
                 <MDBCardText>
@@ -41,27 +51,20 @@ const CarteVisiteur = (props) => {
                   <b>Ingredient: </b>
                   {props.el.ingredient}
                 </MDBCardText>
-                3alouch, felfel a7mer, kosksi smid, hrissa,zit zitouna
               </MDBCardText>
               <MDBCardText>
                 {" "}
                 <b>Prix:</b> {props.el.price}
               </MDBCardText>
             </MDBCardBody>
-            {/* <MDBBtn
-                floating
-                tag="a"
-                className="ml-auto mr-4 lighten-3 mdb-coalor"
-                action
-                
-              >
-                <MDBIcon icon="chevron-right" className="mdb-color lighten-3" />
-                
-              </MDBBtn> */}
-            <div className="rounded-bottom mdb-color green text-center pt-3">
+
+            <div className="rounded-bottom colorbottomcard text-center pt-3">
               <center>
                 {" "}
-                <div className="white-text"> Soliman Nabeul</div>
+                <div className="white-text">
+                  {" "}
+                  {props.el.gouvernorat} in {props.el.region}
+                </div>
               </center>
             </div>
           </MDBCard>

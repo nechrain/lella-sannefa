@@ -38,18 +38,18 @@ class NavbarVisiteur extends Component {
         <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
           <MDBNavbarNav left>
             <MDBNavItem active>
-              <MDBNavLink to="#!">
+              <MDBNavLink to="/">
                 <b>Home</b>
               </MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
-              <MDBNavLink to="#!">
-                <b>Service</b>
+              <MDBNavLink to="/about">
+                <b>A propos</b>
               </MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
-              <MDBNavLink to="#!">
-                <b>Mon compte</b>
+              <MDBNavLink to="/Contact">
+                <b>Contact</b>
               </MDBNavLink>
             </MDBNavItem>
             <MDBNavItem></MDBNavItem>
@@ -70,23 +70,6 @@ class NavbarVisiteur extends Component {
                 <MDBIcon fab icon="google-plus-g" />
               </MDBNavLink>
             </MDBNavItem>
-            {/* <MDBNavItem>
-              <MDBDropdown>
-                <MDBDropdownToggle nav caret>
-                  <MDBIcon icon="user" />
-                </MDBDropdownToggle>
-                <MDBDropdownMenu className="dropdown-right">
-                  <MDBDropdownItem>
-                    {" "}
-                    <Link to="/SignUp">Sign up</Link>
-                  </MDBDropdownItem>
-                  <MDBDropdownItem>
-                    {" "}
-                    <Link to="/SignIn">Sign in</Link>
-                  </MDBDropdownItem>
-                </MDBDropdownMenu>
-              </MDBDropdown>
-            </MDBNavItem> */}
           </MDBNavbarNav>
         </MDBCollapse>
       </MDBNavbar>

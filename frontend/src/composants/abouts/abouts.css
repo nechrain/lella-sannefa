@@ -1,0 +1,66 @@
+.epais{
+    font-weight: 400px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(203, 207, 185);
+    font-size: 25px;
+}
+/*about*/
+ .sectionone{
+    background-image: url("https://images.pexels.com/photos/3184195/pexels-photo-3184195.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 500px;
+  
+  }
+  .spacess{
+    margin-left: 7%;
+  }
+
+  .section33{
+    margin-top: 5%;
+  }
+  .imgsec{
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      margin: 30px;
+  }
+  .TITLEii{
+    font-family: "Playball", cursive;
+    font-size: 60px;
+    color: rgb(236, 133, 8);
+    margin-top: 5%;
+    margin-bottom: 5%;
+   
+  }
+  .title23{
+    float: left;
+    font-family: "Playball", cursive;
+    font-size: 50px;
+    font-weight: 500;
+    color:teal;
+  }
+  .titre133{
+   margin-bottom: 3px;
+    font-family: "Playball", cursive;
+    font-size: 30px;
+    font-weight: 500;
+  }
+  .sec3{
+    background-color: rgb(201, 211, 180);
+  }
+  /*flex*/
+  .classement{
+  display: flex;
+  flex-direction: row;
+flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-left: 25px;
+  margin-top: ;
+ 
+  }
+  .titrou{
+    font-family: "Playball", cursive;
+    font-size: 30px;
+  }

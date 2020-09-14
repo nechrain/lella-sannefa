@@ -42,17 +42,12 @@ class Section3 extends React.Component {
                   className="white-text text-center text-md-left mt-xl-5 mb-5"
                 >
                   <MDBAnimation type="fadeInLeft" delay=".3s">
-                    <h1 className="h1-responsive font-weight-bold mt-sm-5">
-                      Purchases your home made food with our app
-                    </h1>
-                    <hr className="hr-light" />
-                    <h6 className="mb-4">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Rem repellendus quasi fuga nesciunt dolorum nulla magnam
-                      veniam sapiente, fugiat! Commodi sequi non animi ea dolor
-                      molestiae iste.
+                   
+                  
+                    <h6 className="mb-4 title13">
+                   " شبيك لبيك ،مع للا الصنافة ماكلة الدار بين إديك "
                     </h6>
-
+                    <hr className="hr-light" />
                     <MDBBtn color="green"> 
                     {" "}
                       <Link to="/SignIn"><span className="titlesign"> Sign In</span></Link></MDBBtn>

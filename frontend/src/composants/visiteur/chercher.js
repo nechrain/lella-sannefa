@@ -62,9 +62,9 @@ const Chercher = () => {
                 />
               </div>
      {/* partie 3 */}
-              <div> 
+              {/* <div> 
               <MDBBtn color="success"><span className="title2">Chercher</span></MDBBtn>
-              </div>
+              </div> */}
           
     </div>
  

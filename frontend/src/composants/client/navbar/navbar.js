@@ -29,6 +29,7 @@ class NavbarC extends Component {
     this.setState({ isOpen: !this.state.isOpen });
   };
 
+  
   render() {
     return (
       <Router>
@@ -45,13 +46,13 @@ class NavbarC extends Component {
                 </MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBNavLink to="#!">
-                  <b>Service</b>
+                <MDBNavLink to="/about">
+                  <b>A propos</b>
                 </MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBNavLink to="#!">
-                  <b>Mon compte</b>
+                <MDBNavLink to="/contact">
+                  <b>Contact</b>
                 </MDBNavLink>
               </MDBNavItem>
               <MDBNavItem></MDBNavItem>
@@ -73,18 +74,19 @@ class NavbarC extends Component {
                 </MDBNavLink>
               </MDBNavItem>
               <MDBNavItem>
-                <MDBDropdown>
-                  <MDBDropdownToggle nav caret>
+               
+                
                     <MDBIcon icon="user" />
-                  </MDBDropdownToggle>
-                  <MDBDropdownMenu className="dropdown-right">
-                    <MDBDropdownItem>
-                      <button tag={Link} to="/" onClick={()=>this.props.logout()}>
+                  
+                
+                   
+ <button tag={Link} to="/signoutC" onClick={()=>this.props.logout()}>
                         Sign Out
-                      </button>
-                    </MDBDropdownItem>
-                  </MDBDropdownMenu>
-                </MDBDropdown>
+                        <MDBIcon icon="user" />
+  </button>
+                   
+               
+               
               </MDBNavItem>
             </MDBNavbarNav>
           </MDBCollapse>

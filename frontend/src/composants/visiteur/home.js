@@ -3,7 +3,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import "./home.css";
-import { MDBContainer, MDBCol, MDBRow, MDBAnimation,MDBView } from "mdbreact";
+import { MDBContainer, MDBCol, MDBRow, MDBAnimation, MDBView } from "mdbreact";
 import Chercher from "./chercher";
 
 import CarteVisiteur from "./cartevisiteur";
@@ -29,21 +29,17 @@ class Home extends Component {
         </section>
 
         <Chercher />
-        <MDBContainer>
-        
+
+        <MDBContainer className="groupse">
           {this.props.platdujourS
             .filter((el) => el.state === "publiee")
             .map((el) => (
-             
               <CarteVisiteur el={el} />
-           
-              
             ))}
-              
         </MDBContainer>
 
-        <MDBContainer>
-          <MDBRow className="py-5">
+        
+          {/* <MDBRow className="py-5">
             <MDBCol md="12" className="text-center">
               <MDBAnimation type="bounce" infinite>
                 <span className="titlee">
@@ -52,8 +48,8 @@ class Home extends Component {
                 </span>
               </MDBAnimation>
             </MDBCol>
-          </MDBRow>
-        </MDBContainer>
+          </MDBRow> */}
+       
 
         <FooterVisiteur />
       </div>

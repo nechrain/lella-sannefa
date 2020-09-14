@@ -12,6 +12,7 @@ import {
 import { Fragment } from "react";
 import { connect } from "react-redux";
 import { addPlatJourSToApi } from "../../../actions/sannefaaction";
+import { getUser } from "../../../actions/authentification";
 import axios from "axios";
 import "./sannefa.css";
 
@@ -22,7 +23,9 @@ class AddPlatjour extends Component {
     selectedFile: "",
     image: "",
   };
-
+  componentDidMount() {
+    this.props.getUser();
+  }
   toggle = (nr) => () => {
     let modalNumber = "modal" + nr;
     this.setState({
@@ -91,7 +94,9 @@ class AddPlatjour extends Component {
                   type="text"
                   id="example1"
                   className="form-control form-control-md"
-                 onChange={(e) => this.setState({ price: e.target.value })}
+                  onChange={(e) =>
+                    this.setState({ ingredient: e.target.value })
+                  }
                 />
               </div>
 
@@ -144,7 +149,8 @@ class AddPlatjour extends Component {
                     prix: this.state.prix,
                     ingredient: this.state.ingredient,
                     gouvernorat: this.state.gouvernorat,
-                    région: this.state.région,
+                    region: this.state.region,
+                    iduser: this.props.authReducer._id,
                   })
                 }
               >
@@ -157,11 +163,14 @@ class AddPlatjour extends Component {
     );
   }
 }
-
+const mapStateToProps = (state) => ({
+  authReducer: state.authReducer,
+});
 const mapDispatchToProps = (dispatch) => {
   return {
     platjouradded: (el) => dispatch(addPlatJourSToApi(el)),
+    getUser: () => dispatch(getUser()),
   };
 };
 
-export default connect(null, mapDispatchToProps)(AddPlatjour);
+export default connect(mapStateToProps, mapDispatchToProps)(AddPlatjour);

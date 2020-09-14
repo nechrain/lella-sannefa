@@ -6,6 +6,7 @@ const splatjourSchema = new mongoose.Schema({
   price: { type: Number },
   region: { type: String },
   gouvernorat: { type: String },
-  state:{type:String}
+  state: { type: String },
+  iduser: { type: mongoose.Schema.Types.ObjectId, ref: "inscription" },
 });
 module.exports = mongoose.model("lesplatsdusannefa", splatjourSchema);

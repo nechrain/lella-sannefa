@@ -23,7 +23,7 @@ const PlatjourS = () => {
  
  
   <Advertsment/>
-    <AddPlatjour/>
+    <center><AddPlatjour/></center>
    <CartePlatjourS/>
     <FooterVisiteur/>
   
