@@ -1,8 +1,7 @@
 import React from "react";
 import "./abouts.css";
-import logoC from "./logo.png"
 
-import { connect } from "react-redux";
+
 
 import { Link } from "react-router-dom";
 import imgcontact from "./contact.jpg"

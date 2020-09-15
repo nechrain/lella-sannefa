@@ -1,37 +1,67 @@
-import React, { Component } from "react";
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import "bootstrap-css-only/css/bootstrap.min.css";
-import "mdbreact/dist/css/mdb.css";
+import React from "react";
+
 import "./sannefa.css";
-import NavbarS from "../navbar/navbar";
 import AddPlatjour from "./ajoutplatjourS";
 import CartePlatjourS from "./carteplatjourS";
-import "../../visiteur/footer/footerV"
-import Advertsment from "./publicité";
-import FooterVisiteur from "../../visiteur/footer/footerV";
+import NavbarS from "../../navbars/navbarS";
+import Footers from "../../footers/footerV";
+class Section3 extends React.Component {
+  state = {
+    collapsed: false,
+  };
+
+  handleTogglerClick = () => {
+    this.setState({
+      collapsed: !this.state.collapsed,
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <NavbarS />
+
+        <center>
+          <AddPlatjour />
+        </center>
+        <CartePlatjourS />
+        <Footers />
+      </div>
+    );
+  }
+}
+
+export default Section3;
+
+/*  <MDBBtn outline color="white">
+{" "}
+<Link to="/SignUp">
+  <span className="titlesign">S'enregistrer</span>
+</Link>
+</MDBBtn>
 
 
-
-
-
-const PlatjourS = () => {
-  return (
-    <div>
-      
-
-    <NavbarS/>
+import {
  
+  MDBBtn,
  
-  <Advertsment/>
-    <center><AddPlatjour/></center>
-   <CartePlatjourS/>
-    <FooterVisiteur/>
-  
+} from "mdbreact";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
-     
-    
-    </div>
-  );
-};
 
-export default PlatjourS;
+
+import "./sannefa.css";
+import AddPlatjour from "./ajoutplatjourS";
+import CartePlatjourS from "./carteplatjourS";
+import NavbarS from "../../navbars/navbarS";
+import Footers from "../../footers/footerV";
+
+
+
+<NavbarS />
+
+<center>
+  <AddPlatjour />
+</center>
+<CartePlatjourS />
+<Footers />*/

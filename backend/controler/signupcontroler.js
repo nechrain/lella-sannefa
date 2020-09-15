@@ -57,7 +57,9 @@ module.exports = {
           expires: new Date(Date.now() + 900000000),
           httpOnly: true,
         })
-        .send(_.pick(user, ["name", "firstname", "mail", "phone", "role"]));
+        .send(
+          _.pick(user, ["name", "firstname", "mail", "phone", "role", "_id"])
+        );
     } catch (err) {
       console.log(err);
     }
@@ -72,4 +74,3 @@ module.exports = {
     res.clearCookie("token").send("token deleted");
   },
 };
-

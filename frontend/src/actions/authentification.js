@@ -32,11 +32,15 @@ export function login(el) {
             payload: res.data,
           });
           localStorage.setItem("Role", res.data.role);
-
+          console.log(res.data._id);
           if (res.data.role === "client") {
-            window.location.assign("/client");
+            {
+              window.location.assign("/client/home/");
+              localStorage.setItem(("userid", res.data._id));
+            }
           } else if (res.data.role === "sannefa") {
-            window.location.assign("/platjour");
+            window.location.pathname = "/sannefa/platjourS/";
+            localStorage.setItem(("userid", res.data._id));
           } else if (res.data.role === "undefined") {
             window.location.assign("/");
           }

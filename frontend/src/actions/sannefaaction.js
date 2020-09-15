@@ -6,7 +6,7 @@ import {
   PUBLISH_Platjour,
 } from "./type";
 import axios from "axios";
-
+import swal from "sweetalert";
 //get plat jour//
 export const getPlatJourS = (payload) => {
   return {
@@ -34,7 +34,7 @@ export const addPlatJourSToApi = (el) => {
   return (dispatch) =>
     axios
       .post("http://localhost:1305/platjour/ajouter", el)
-      .then((res) => window.location.reload(false));
+      .then((res) => swal(res.data).then((button) => window.location.reload()));
 };
 
 //supprimer plat du jour//
@@ -46,13 +46,17 @@ export const supprimerPlat = (payload) => {
 };
 export const supprimerPlatduData = (id) => {
   return (dispatch) =>
-    axios.delete(`http://localhost:1305/platjour/supprimer/${id}`).then((res) =>
-      dispatch(
-        supprimerPlat(res.data),
+    axios
+      .delete(`http://localhost:1305/platjour/supprimer/${id}`)
+      .then((res) => {
+        swal("Produit supprimé").then((button) =>
+          dispatch(
+            supprimerPlat(res.data),
 
-        window.location.reload(false)
-      )
-    );
+            window.location.reload()
+          )
+        );
+      });
 };
 
 // changer dans le plat du jour "
@@ -62,15 +66,18 @@ export const changerPlat = (payload) => {
     payload,
   };
 };
-export const changeeDataPlatjour = (el) => {
+export const changeeDataPlatjour = (el, id) => {
   return (dispatch) => {
     console.log(el);
-
+    console.log(id);
     axios
-      .patch(`http://localhost:1305/platjour/changer/${el.id}`, el)
-      .then((res) =>
-        dispatch(changerPlat(res.data), window.location.reload(false))
-      );
+      .patch(`http://localhost:1305/platjour/changer/${id}`, el)
+
+      .then((res) => {
+        swal("produit updated").then((button) =>
+          dispatch(changerPlat(res.data), window.location.reload())
+        );
+      });
   };
 };
 
@@ -82,14 +89,16 @@ export const publierPlat = (payload) => {
 };
 export const publierDataPlatjour = (el) => {
   return (dispatch) => {
-    console.log(el);
-
     axios
       .patch(
         `http://localhost:1305/platjour/publier/${el._id}`,
         {},
         { withCredentials: true }
       )
-      .then((res) => dispatch(publierPlat(res.data)));
+      .then((res) => {
+        swal("Produit Publier").then((button) =>
+          dispatch(publierPlat(res.data))
+        );
+      });
   };
 };

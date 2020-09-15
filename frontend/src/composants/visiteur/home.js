@@ -7,12 +7,13 @@ import { MDBContainer, MDBCol, MDBRow, MDBAnimation, MDBView } from "mdbreact";
 import Chercher from "./chercher";
 
 import CarteVisiteur from "./cartevisiteur";
-import NavbarVisiteur from "./navbar/navbar";
-import FooterVisiteur from "./footer/footerV";
+
 import Publicité from "./tunisianFood/publicité";
 import Section3 from "./section3";
 import { getPlatJourSData } from "../../actions/sannefaaction";
 import { connect } from "react-redux";
+import NavbarV from "../navbars/navbarV";
+import Footers from "../footers/footerV";
 
 class Home extends Component {
   componentDidMount() {
@@ -22,13 +23,12 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <NavbarVisiteur />
+        <NavbarV />
         <section>
-          {" "}
           <Section3 />{" "}
         </section>
 
-        <Chercher />
+       
 
         <MDBContainer className="groupse">
           {this.props.platdujourS
@@ -38,20 +38,7 @@ class Home extends Component {
             ))}
         </MDBContainer>
 
-        
-          {/* <MDBRow className="py-5">
-            <MDBCol md="12" className="text-center">
-              <MDBAnimation type="bounce" infinite>
-                <span className="titlee">
-                  Lella Essanefa , commandez vos plat fais maison ou est ce que
-                  vous y etes
-                </span>
-              </MDBAnimation>
-            </MDBCol>
-          </MDBRow> */}
-       
-
-        <FooterVisiteur />
+        <Footers />
       </div>
     );
   }

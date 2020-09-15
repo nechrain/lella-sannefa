@@ -15,6 +15,5 @@ export const getET_IDSANNEFAData = (idplat) => {
       .get(`http://localhost:1305/platjour/getidplat/${idplat}`)
       .then((res) => {
         dispatch(getIDsannefa(res.data));
-        console.log(res.data);
       });
 };

@@ -49,10 +49,11 @@ class AddPlatjour extends Component {
   render() {
     return (
       <MDBContainer>
-        <button
+        <MDBBtn
+          className="mt-5 mb-5"
+          color="warning"
           floating="TRUE"
           tag="a"
-          className="ajouterr"
           action
           onClick={this.toggle(14)}
         >
@@ -60,7 +61,7 @@ class AddPlatjour extends Component {
           <div>
             <MDBIcon icon="plus" />
           </div>
-        </button>
+        </MDBBtn>
 
         <MDBModal isOpen={this.state.modal14} toggle={this.toggle(14)} centered>
           <MDBModalHeader toggle={this.toggle(14)}></MDBModalHeader>
@@ -106,7 +107,9 @@ class AddPlatjour extends Component {
                   type="text"
                   id="example1"
                   className="form-control form-control-sm"
-                  onChange={(e) => this.setState({ price: e.target.value })}
+                  onChange={(e) =>
+                    this.setState({ price: Number(e.target.value) })
+                  }
                 />
               </div>
 
@@ -146,7 +149,7 @@ class AddPlatjour extends Component {
                     title: this.state.title,
                     // image: this.state.image,
                     image: this.state.selectedFile.name,
-                    prix: this.state.prix,
+                    price: Number(this.state.price),
                     ingredient: this.state.ingredient,
                     gouvernorat: this.state.gouvernorat,
                     region: this.state.region,

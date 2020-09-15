@@ -14,7 +14,7 @@ import {
 } from "mdbreact";
 import { getET_IDSANNEFAData } from "../../actions/SanefaID";
 import { connect } from "react-redux";
-import "./home.css"
+import "./home.css";
 
 class DétailClient extends Component {
   state = {
@@ -23,21 +23,18 @@ class DétailClient extends Component {
   };
 
   toggle = (nr) => () => {
+    this.props.sannefaIDact(this.props.idplat);
     let modalNumber = "modal" + nr;
     this.setState({
       [modalNumber]: !this.state[modalNumber],
     });
   };
 
-  componentDidMount() {
-    this.props.sannefaIDact(this.props.idplat);
-  }
-
   render() {
     return (
-      <MDBContainer>
-        <MDBBtn color="amber" onClick={this.toggle(8)}>
-         Détails
+      <div>
+        <MDBBtn color="amber" className="mb-4" onClick={this.toggle(8)}>
+          Détails
         </MDBBtn>
         <MDBModal
           isOpen={this.state.modal8}
@@ -50,11 +47,13 @@ class DétailClient extends Component {
           </MDBModalHeader>
           <MDBModalBody>
             <MDBCard>
-              <center><MDBCardImage
-                className="img-fluid profilimage"
-                src="https://cdn.icon-icons.com/icons2/1736/PNG/512/4043251-avatar-female-girl-woman_113291.png"
-                waves
-              /></center>
+              <center>
+                <MDBCardImage
+                  className="img-fluid profilimage"
+                  src="https://cdn.icon-icons.com/icons2/1736/PNG/512/4043251-avatar-female-girl-woman_113291.png"
+                  waves
+                />
+              </center>
 
               <MDBCardBody>
                 <MDBCardTitle>NOM</MDBCardTitle>
@@ -77,7 +76,7 @@ class DétailClient extends Component {
             </MDBBtn>
           </MDBModalFooter>
         </MDBModal>
-      </MDBContainer>
+      </div>
     );
   }
 }

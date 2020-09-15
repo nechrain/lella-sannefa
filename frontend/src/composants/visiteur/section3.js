@@ -50,12 +50,12 @@ class Section3 extends React.Component {
                     <hr className="hr-light" />
                     <MDBBtn color="green"> 
                     {" "}
-                      <Link to="/SignIn"><span className="titlesign"> Sign In</span></Link></MDBBtn>
+                      <Link to="/SignIn"><span className="titlesign"> Connecter</span></Link></MDBBtn>
 
 
                     <MDBBtn outline color="white">
                     {" "}
-                    <Link to="/SignUp"><span className="titlesign">Sign up</span></Link>
+                    <Link to="/SignUp"><span className="titlesign">S'enregistrer</span></Link>
                     </MDBBtn>
 
                   </MDBAnimation>

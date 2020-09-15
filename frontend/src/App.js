@@ -1,46 +1,45 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+
 import Home from "./composants/visiteur/home";
-import Authentificationsannefa from "./composants/visiteur/authentification/signUp";
-import Loginn from "./composants/visiteur/authentification/signIn";
-import PlatjourS from "./composants/sannefa/platjour/platjourS"
-import Client from "./composants/client/client";
-import SignoutS from "./composants/visiteur/authentification/signoutS"
-import SignoutC from "./composants/visiteur/authentification/signoutC"
-import CarteClient from "./composants/visiteur/carteclient";
-import Contact from "./composants/abouts/contact";
-import About from "./composants/abouts/about";
 
+import PlatjourS from "./composants/sannefa/platjour/platjourS";
+import Client from "./composants/visiteur/client";
 
+import SignoutS from "./composants/authentification/signoutS";
+import SignoutC from "./composants/authentification/signoutC";
+import Loginn from "./composants/authentification/signIn";
+import SignUP from "./composants/authentification/signUp";
 
+import AboutC from "./composants/abouts/aboutC";
+import AboutS from "./composants/abouts/aboutS";
+import AboutV from "./composants/abouts/aboutV";
 
-
+import Contact from "./composants/contact/contact";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
         <Switch>
-          <Route exact path="/"         component={Home} />
-          <Route exact path="/SignUp"   component={Authentificationsannefa} />
-          <Route exact path="/SignIn"   component={Loginn} />
-          <Route exact path="/platjour" component={PlatjourS}/>
-          <Route exact path="/client"   component={CarteClient}/>
-          <Route exact path="/signoutS" component={SignoutS}/>
-          <Route exact path="/signoutC" component={SignoutC}/>
-          <Route exact path="/contact"  component={Contact}/>
-          <Route exact path="/about"    component={About}/>
-         
-      
+          <Route exact path="/" component={Home} />
+          <Route path="/SignUp" component={SignUP} />
+          <Route path="/SignIn" component={Loginn} />
+
+          <Route path="/signoutS" component={SignoutS} />
+          <Route path="/signoutC" component={SignoutC} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/about" component={AboutV} />
+
+          <Route path="/client/home" component={Client} />
+          <Route path="/client/about/" component={AboutC} />
+
+          <Route path="/sannefa/platjourS/" component={PlatjourS} />
+          <Route path="/sannefa/home" component={Home} />
+          <Route path="/sannefa/about" component={AboutS} />
         </Switch>
-       
       </BrowserRouter>
-     
-     
     </div>
   );
 }

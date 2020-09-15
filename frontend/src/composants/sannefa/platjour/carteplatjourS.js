@@ -21,90 +21,96 @@ import {
   MDBCol,
   MDBRow,
   MDBView,
+  MDBContainer,
 } from "mdbreact";
 import ChangerPlat from "./changerplat";
-
+const userid = localStorage.getItem("userid");
 class CartePlatjourS extends React.Component {
+  state = {
+    userid: "",
+  };
+
   componentDidMount() {
     this.props.platJour();
+    this.setState({ userid: userid });
+    console.log(this.state.userid);
   }
   render() {
     return (
-      <div className="spaceCarte">
+      <div className="p-5">
         <MDBRow>
-          {this.props.platdujourS.map((el, _id) => (
-            <MDBCol md="4">
-              <MDBCard narrow className="ahbet">
-                <MDBView>
-                  <MDBCardImage
-                    hover
-                    overlay="pink-slight"
-                    className="img-fluid w-100 p-3 "
-                    style={{ height: "20rem" }}
-                    src={`http://localhost:1305/${el.image}`}
-                    
-                    waves
-                  />
-                </MDBView>
-                <MDBCardBody>
-                <center>  <MDBCardTitle className="pink-text">{el.title} </MDBCardTitle></center>
-                  <hr></hr>
-                  <MDBCardText>
-                    <b>Les ingredient :</b>
-                    {el.ingredient}{" "}
-                  </MDBCardText>
-                  <MDBCardText>
-                    <b>Prix :</b>
-                    {el.prix}{" "}
-                  </MDBCardText>
-
-                  <MDBCardText>
-                    <b>Gouvernorat :</b>
-                    {el.gouvernorat}{" "}
-                  </MDBCardText>
-                  <MDBCardText>
-                    <b>Localisation: </b>{el.region}
-                  </MDBCardText>
-
-                  <hr></hr>
-
-                  <div className="butonet">
-
-  <div >
-                      <MDBBtn
-                        color="green"
-                          
-                        onClick={() => this.props.publier(el)}
-                      >
-                         <MDBIcon icon="eye" />
-                        Publier
-                      </MDBBtn>
-                    </div>
-                    
-
-                    <ChangerPlat platS={el._id} />
-
-
-                  <div>
+          {this.props.platdujourS
+            .filter((rl) => rl.iduser === this.props.userinfos._id)
+            .map((el, _id) => (
+              <MDBCol size="4">
+                <MDBCard className="mb-5 ">
+                  <MDBView>
+                    <img
+                      hover
+                      className=" w-100 p-3"
+                      src={`http://localhost:1305/${el.image}`}
+                      waves
+                      height="290px"
+                    />
+                  </MDBView>
+                  <MDBCardBody>
+                    <center>
                       {" "}
-                      <MDBBtn
-                        onClick={() => this.props.supprimer(el._id)}
-                        color="red"
-                        icon="trash"
-                      >
+                      <MDBCardTitle className="pink-text">
+                        {el.title}{" "}
+                      </MDBCardTitle>
+                    </center>
+                    <hr></hr>
+                    <MDBCardText>
+                      <b>Les ingredient :</b>
+                      {el.ingredient}{" "}
+                    </MDBCardText>
+                    <MDBCardText>
+                      <b>Prix :</b>
+                      {el.price}{" "}
+                    </MDBCardText>
+                    <MDBCardText>
+                      <b>Gouvernorat :</b>
+                      {el.gouvernorat}{" "}
+                    </MDBCardText>
+                    <MDBCardText>
+                      <b>Localisation: </b>
+                      {el.region}
+                    </MDBCardText>
+                    <hr></hr>
+                    <MDBRow>
+                      <MDBCol size="4">
                         {" "}
-                        <MDBIcon icon="trash" />
-                        supprimer
-                      </MDBBtn>
-                    </div>{" "}
-
-
-
-                  </div>
-                </MDBCardBody>
-              </MDBCard>
-            </MDBCol>
-          ))}
+                        <MDBBtn
+                          color="green"
+                          size="sm"
+                          onClick={() => this.props.publier(el)}
+                        >
+                          <MDBIcon icon="eye" />
+                          <small> Publier</small>
+                        </MDBBtn>
+                      </MDBCol>
+                      <MDBCol size="4">
+                        {" "}
+                        <ChangerPlat platS={el} />{" "}
+                      </MDBCol>
+                      <MDBCol size="4">
+                        {" "}
+                        <MDBBtn
+                          size="sm"
+                          onClick={() => this.props.supprimer(el._id)}
+                          color="red"
+                        >
+                          {" "}
+                          <MDBIcon icon="trash" />
+                          <small> supprimer</small>
+                        </MDBBtn>
+                      </MDBCol>
+                    </MDBRow>
+                  </MDBCardBody>
+                </MDBCard>
+              </MDBCol>
+            ))}
         </MDBRow>
       </div>
     );
@@ -112,6 +118,7 @@ class CartePlatjourS extends React.Component {
 }
 const mapStateToProps = (state) => ({
   platdujourS: state.platdujourSS,
+  userinfos: state.authReducer,
 });
 const mapDispatchToProps = (dispatch) => ({
   platJour: (el) => dispatch(getPlatJourSData(el)),

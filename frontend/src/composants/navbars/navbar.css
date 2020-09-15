@@ -1,0 +1,37 @@
+ul li {
+    list-style: none;
+    display: inline;
+    justify-content: space-around;
+    padding-left: 30px;
+  }
+  ul li a {
+    text-decoration: none;
+    color: ivory;
+    font-size: 25px;
+  }
+  .header {
+     
+   
+   
+    height: 100px;
+   background-color:rgb(84, 194, 84);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  
+   
+   
+   
+  
+    box-shadow: 10px 5px 5px rgb(167, 147, 105);
+   
+  
+    
+}
+.logo{
+  border-radius: 50%;
+  height: 80px;
+  border: 3px black ;
+  background-color: rgb(240, 248, 250);
+}
+

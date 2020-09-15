@@ -53,7 +53,7 @@ module.exports = {
       .catch((err) => console.log(err));
   },
 
-  /********************************obtener contact sannefa pour plat******** */
+  /********************************obtenir contact sannefa pour plat******** */
   getidplat: (req, res) => {
     Splatjour.findOne({ _id: req.params.id })
       .populate("iduser")
