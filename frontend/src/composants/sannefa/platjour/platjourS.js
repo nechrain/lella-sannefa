@@ -5,6 +5,7 @@ import AddPlatjour from "./ajoutplatjourS";
 import CartePlatjourS from "./carteplatjourS";
 import NavbarS from "../../navbars/navbarS";
 import Footers from "../../footers/footerV";
+import CarouselPage from "../../caroussel/caroussel";
 class Section3 extends React.Component {
   state = {
     collapsed: false,
@@ -20,6 +21,7 @@ class Section3 extends React.Component {
     return (
       <div>
         <NavbarS />
+        < CarouselPage/>
 
         <center>
           <AddPlatjour />

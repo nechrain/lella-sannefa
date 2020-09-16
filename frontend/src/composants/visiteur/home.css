@@ -153,3 +153,15 @@
   width: 200px;
   margin-top: 5%;
 }
+
+
+.cnes{
+  height: 500px;
+}
+
+.d-block{
+  height: -webkit-fill-available;
+}
+#classicformpage .view {
+  height: 100vh !important;
+}

@@ -113,17 +113,7 @@ class AddPlatjour extends Component {
                 />
               </div>
 
-              <div className="form-group">
-                <label htmlFor="example1">Gouvernorat</label>
-                <input
-                  type="text"
-                  id="example1"
-                  className="form-control form-control-md"
-                  onChange={(e) =>
-                    this.setState({ gouvernorat: e.target.value })
-                  }
-                />
-              </div>
+             
 
               <div className="form-group">
                 <label htmlFor="example1">Région</label>

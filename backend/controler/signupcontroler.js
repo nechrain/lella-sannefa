@@ -8,6 +8,7 @@ module.exports = {
   /********************************inscription************************* */
   register: async (req, res) => {
     try {
+      console.log("ok", req.body);
       const { name, firstname, phone, mail, password, role } = req.body;
 
       user = new User({

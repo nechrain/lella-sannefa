@@ -5,7 +5,7 @@ const splatjourSchema = new mongoose.Schema({
   ingredient: { type: String },
   price: { type: Number },
   region: { type: String },
-  gouvernorat: { type: String },
+
   state: { type: String },
   iduser: { type: mongoose.Schema.Types.ObjectId, ref: "inscription" },
 });

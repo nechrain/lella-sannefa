@@ -42,7 +42,13 @@ class CartePlatjourS extends React.Component {
           {this.props.platdujourS
             .filter((rl) => rl.iduser === this.props.userinfos._id)
             .map((el, _id) => (
-              <MDBCol size="4">
+             
+             
+             
+             
+             
+             
+             <MDBCol size="4">
                 <MDBCard className="mb-5 ">
                   <MDBView>
                     <img
@@ -67,12 +73,9 @@ class CartePlatjourS extends React.Component {
                     </MDBCardText>
                     <MDBCardText>
                       <b>Prix :</b>
-                      {el.price}{" "}
+                      {el.price }{" "}TND
                     </MDBCardText>
-                    <MDBCardText>
-                      <b>Gouvernorat :</b>
-                      {el.gouvernorat}{" "}
-                    </MDBCardText>
+                  
                     <MDBCardText>
                       <b>Localisation: </b>
                       {el.region}

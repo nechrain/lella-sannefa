@@ -14,7 +14,7 @@ export function register(el) {
           // console.log("amira", res.data)
         )
       )
-      .catch((err) => alert("Créez un compte"));
+      .catch((err) => console.log(err));
 }
 
 export function login(el) {
@@ -48,7 +48,7 @@ export function login(el) {
 
         // dispatch(getUser())
       )
-      .catch((err) => alert("Créez un compte"));
+      .catch((err) => console.log(err));
 }
 export const getUser = () => async (dispatch) => {
   try {

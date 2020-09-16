@@ -15,6 +15,7 @@ import {
 import { getET_IDSANNEFAData } from "../../actions/SanefaID";
 import { connect } from "react-redux";
 import "./home.css";
+import avatar from "./WOMEN.png"
 
 class DétailClient extends Component {
   state = {
@@ -50,7 +51,7 @@ class DétailClient extends Component {
               <center>
                 <MDBCardImage
                   className="img-fluid profilimage"
-                  src="https://cdn.icon-icons.com/icons2/1736/PNG/512/4043251-avatar-female-girl-woman_113291.png"
+                  src={avatar}
                   waves
                 />
               </center>

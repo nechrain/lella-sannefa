@@ -19,7 +19,7 @@ class Home extends Component {
   componentDidMount() {
     this.props.platJour();
   }
-
+  state = { region: "" };
   render() {
     return (
       <div>
@@ -27,15 +27,11 @@ class Home extends Component {
         <section>
           <Section3 />{" "}
         </section>
-
        
-
         <MDBContainer className="groupse">
-          {this.props.platdujourS
-            .filter((el) => el.state === "publiee")
-            .map((el) => (
-              <CarteVisiteur el={el} />
-            ))}
+          {this.props.platdujourS.map((el) => (
+            <CarteVisiteur el={el} />
+          ))}
         </MDBContainer>
 
         <Footers />
